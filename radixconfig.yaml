@@ -9,6 +9,7 @@ spec:
         from: main
   components:
     - name: server
+      runAsNonRoot: true
       ports:
         - name: http
           port: 8080
