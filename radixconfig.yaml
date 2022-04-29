@@ -9,7 +9,6 @@ spec:
         from: main
   components:
     - name: server
-      image: nginxinc/nginx-unprivileged
       ports:
         - name: http
           port: 8080
