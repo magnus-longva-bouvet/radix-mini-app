@@ -1,5 +1,4 @@
 FROM alpine:3.15 AS git_hash
-COPY entrypoint.sh /app
 RUN apk add git && mkdir /app
 COPY .git /app
 RUN cd /app && git rev-parse HEAD > /tmp/git_hash_value
