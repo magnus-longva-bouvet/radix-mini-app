@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 RUN apt update && apt install netcat gettext -y
 COPY entrypoint.sh /
 #CMD ["/entrypoint.sh"]
-CMD envsubst </etc/os-release > /tmp/os-release \
+    CMD envsubst </etc/os-release > /tmp/os-release \
     && cat /tmp/os-release \
     && echo -n "daemon off;" \
     && /entrypoint.sh
