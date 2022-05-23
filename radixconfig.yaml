@@ -14,5 +14,8 @@ spec:
         - name: http
           port: 8080
       publicPort: http
+      environmentConfig:
+        - environment: dev
+          replicas: 2
       ingressConfiguration:
         - leastconnectedlb
