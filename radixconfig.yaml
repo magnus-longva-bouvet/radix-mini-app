@@ -19,14 +19,14 @@ spec:
           replicas: 2
       ingressConfiguration:
         - leastconnectedlb
-    - name: gpucomponent
-      runAsNonRoot: true
-      ports:
-        - name: http2
-          port: 8080
-      node:
-        gpu: nvidia-v100
-        gpuCount: 2
-      environmentConfig:
-        - environment: dev
-          replicas: 2
+    # - name: gpucomponent
+    #   runAsNonRoot: true
+    #   ports:
+    #     - name: http2
+    #       port: 8080
+    #   node:
+    #     gpu: nvidia-v100
+    #     gpuCount: 2
+    #   environmentConfig:
+    #     - environment: dev
+    #       replicas: 2
