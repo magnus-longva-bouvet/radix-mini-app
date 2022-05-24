@@ -27,3 +27,6 @@ spec:
       node:
         gpu: nvidia-v100
         gpuCount: 2
+      environmentConfig:
+        - environment: dev
+          replicas: 2
