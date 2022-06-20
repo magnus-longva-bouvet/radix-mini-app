@@ -9,16 +9,16 @@ spec:
         from: main
   components:
     - name: server
-      runAsNonRoot: true
+      src: .
       ports:
         - name: http
           port: 8080
       publicPort: http
-      environmentConfig:
-        - environment: dev
-          replicas: 2
-      ingressConfiguration:
-        - leastconnectedlb
+#       environmentConfig:
+#         - environment: dev
+#           replicas: 2
+#       ingressConfiguration:
+#         - leastconnectedlb
     # - name: gpucomponent
     #   runAsNonRoot: true
     #   ports:
