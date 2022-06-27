@@ -7,6 +7,9 @@ spec:
     - name: dev
       build:
         from: main
+    - name: featureenv
+      build:
+        from: feature/*
   components:
     - name: server
       src: .
