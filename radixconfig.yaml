@@ -12,7 +12,7 @@ spec:
         from: feature/*
   components:
     - name: server
-      src: .
+      image: radixdev.azurecr.io/anneli-frontend:weekly-26-0kqxh
       ports:
         - name: http
           port: 8080
