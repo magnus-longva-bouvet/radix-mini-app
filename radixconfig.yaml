@@ -14,12 +14,16 @@ spec:
       build:
         from: nonconfigbranch
   components:
-    - name: server 
+    - name: server
+      variables:
+        public_port: 8080
       ports:
         - name: http
           port: 8080
       publicPort: http
     - name: delete-me
+      variables:
+        public_port: 8081
       ports:
         - name: http2
           port: 8081
