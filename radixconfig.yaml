@@ -19,6 +19,10 @@ spec:
         - name: http
           port: 8080
       publicPort: http
+    - name: delete-me
+      ports:
+        - name: http2
+          port: 8081
 #       environmentConfig:
 #         - environment: dev
 #           replicas: 2
