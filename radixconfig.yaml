@@ -21,12 +21,12 @@ spec:
         - name: http
           port: 8080
       publicPort: http
-    - name: delete-me
-      variables:
-        public_port: 8081
-      ports:
-        - name: http2
-          port: 8081
+#    - name: delete-me
+#      variables:
+#        public_port: 8081
+#      ports:
+#        - name: http2
+#          port: 8081
 #       environmentConfig:
 #         - environment: dev
 #           replicas: 2
