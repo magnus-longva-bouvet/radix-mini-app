@@ -1,0 +1,3 @@
+[submodule "submodule-example"]
+	path = submodule-example
+	url = https://github.com/equinor/submodule-example
