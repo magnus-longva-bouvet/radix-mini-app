@@ -1,3 +1,6 @@
+FROM radixdev.azurecr.io/radix-magnus-miniapp-server:radix-cache-main
+RUN echo "from cache layer"
+
 FROM ubuntu:20.04
 ARG RADIX_GIT_COMMIT_HASH
 ARG RADIX_GIT_TAGS
