@@ -7,5 +7,4 @@ COPY . /app
 RUN chown 1000:1000 -R /app && chmod 700 /app/entrypoint.sh
 USER 1000
 RUN echo "$RADIX_GIT_COMMIT_HASH $RADIX_GIT_TAGS"
-RUN cat /tmp/msg
 CMD ["/app/entrypoint.sh"]
