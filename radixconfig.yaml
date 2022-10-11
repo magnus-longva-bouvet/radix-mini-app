@@ -3,6 +3,10 @@ kind: RadixApplication
 metadata:
   name: radix-magnus-miniapp
 spec:
+  build:
+    secrets:
+        - SECRET_1
+        - SECRET_2
   environments:
     - name: dev
       build:
