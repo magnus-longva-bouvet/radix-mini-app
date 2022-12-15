@@ -12,6 +12,7 @@ spec:
       build:
         from: main
     - name: nodeploymentenv
+    - name: not-used-env
     - name: featureenv
       build:
         from: feature/*
