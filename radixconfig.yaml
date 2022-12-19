@@ -20,6 +20,8 @@ spec:
         from: nonconfigbranch
   components:
     - name: server
+      ingressConfiguration:
+        - stickysessions
       variables:
         public_port: 8080
       ports:
