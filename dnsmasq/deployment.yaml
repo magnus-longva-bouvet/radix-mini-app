@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "2"
+    radix-branch: ""
+  labels:
+    radix-app: radix-magnus-miniapp
+    radix-component: dnsmasq
+    radix-component-type: component
+  name: dnsmasq
+  namespace: radix-magnus-miniapp-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      radix-component: dnsmasq
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        apparmor.security.beta.kubernetes.io/pod: runtime/default
+        radix-branch: ""
+      labels:
+        radix-app: radix-magnus-miniapp
+        radix-component: dnsmasq
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: radix-app
+                  operator: In
+                  values:
+                  - radix-magnus-miniapp
+                - key: radix-component
+                  operator: In
+                  values:
+                  - dnsmasq
+              topologyKey: kubernetes.io/hostname
+            weight: 1
+      automountServiceAccountToken: false
+      containers:
+      - image: radixdev.azurecr.io/magnus-dnsmasq:latest
+        imagePullPolicy: Always
+        name: server
+        ports:
+        - containerPort: 53
+          name: dnstcp
+          protocol: TCP
+        - containerPort: 53
+          name: dnsudp
+          protocol: UDP
+        resources: 
+          limits:
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          runAsNonRoot: false
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        runAsNonRoot: false
+      serviceAccount: default
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 30
