@@ -35,25 +35,9 @@ spec:
       ports:
         - name: redis
           port: 6379
-#    - name: delete-me
-#      variables:
-#        public_port: 8081
-#      ports:
-#        - name: http2
-#          port: 8081
-#       environmentConfig:
-#         - environment: dev
-#           replicas: 2
-#       ingressConfiguration:
-#         - leastconnectedlb
-    # - name: gpucomponent
-    #   runAsNonRoot: true
-    #   ports:
-    #     - name: http2
-    #       port: 8080
-    #   node:
-    #     gpu: nvidia-v100
-    #     gpuCount: 2
-    #   environmentConfig:
-    #     - environment: dev
-    #       replicas: 2
+    - name: dnsmasq
+      src: dnsmasq
+      ports:
+       - name: dns
+         port: 53
+      
