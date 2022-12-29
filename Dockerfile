@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 ARG RADIX_GIT_COMMIT_HASH
 ARG RADIX_GIT_TAGS
 RUN find / -type f -maxdepth 3 > /find1
-RUN --mount=type=secret,id=SECRET_1 RUN find / -type f -maxdepth 3 > /find2
+RUN --mount=type=secret,id=SECRET_1 find / -type f -maxdepth 3 > /find2
 RUN diff /find1 /find2
 RUN diff /find2 /find1
 #RUN --mount=type=secret,id=SECRET_1 cat /run/secrets/SECRET_1
