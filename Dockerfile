@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 ARG RADIX_GIT_COMMIT_HASH
 ARG RADIX_GIT_TAGS
+RUN echo heo
 RUN find / -type f -maxdepth 7 > /find1
 RUN --mount=type=secret,id=SECRET_1 find / -type f -maxdepth 7 > /find2
 RUN diff /find1 /find2 || true
