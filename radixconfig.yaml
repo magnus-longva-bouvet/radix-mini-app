@@ -4,6 +4,7 @@ metadata:
   name: radix-magnus-miniapp
 spec:
   build:
+    useBuildKit: true
     secrets:
         - SECRET_1
         - SECRET_2
