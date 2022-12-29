@@ -12,6 +12,9 @@ spec:
     - name: dev
       build:
         from: main
+    - name: 274745-enable-buildkit
+      build:
+        from: 274745-enable-buildkit
     - name: nodeploymentenv
     - name: featureenv
       build:
