@@ -5,7 +5,7 @@ RUN echo heo
 #RUN find / -type f -maxdepth 7 > /find1
 RUN --mount=type=secret,id=SECRET_1,required echo "this line will fail if SECRET_1 is not set"
 RUN --mount=type=secret,id=SECRET_1,required find . -iname "*SECRET_1*"
-RUN --mount=type=secret,id=SECRET_3,required echo "this line should not execute because SECRET_3 is not defined"
+#RUN --mount=type=secret,id=SECRET_3,required echo "this line should not execute because SECRET_3 is not defined"
 #RUN diff /find1 /find2 || true
 #RUN diff /find2 /find1 || true
 #RUN --mount=type=secret,id=SECRET_1 cat /run/secrets/SECRET_1
