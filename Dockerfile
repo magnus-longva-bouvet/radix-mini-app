@@ -3,7 +3,7 @@ ARG RADIX_GIT_COMMIT_HASH
 ARG RADIX_GIT_TAGS
 RUN echo heo
 #RUN find / -type f -maxdepth 7 > /find1
-RUN --mount=type=secret,id=SECRET_1,required cat /run/secrets/SECRET_1
+RUN --mount=type=secret,id=SECRET_1,required ls /run/secrets/
 #RUN diff /find1 /find2 || true
 #RUN diff /find2 /find1 || true
 #RUN --mount=type=secret,id=SECRET_1 cat /run/secrets/SECRET_1
