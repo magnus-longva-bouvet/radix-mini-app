@@ -1,0 +1,49 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: radix-magnus-miniapp-magnus-test
+spec:
+  environments:
+    - name: dev
+      build:
+        from: main
+      egress:
+        allowRadix: true
+        rules:
+          - destinations:
+            - "0.0.0.0/0"
+        allowedDnsZones:
+          - "vg.no"
+    - name: 274745-enable-buildkit
+      build:
+        from: 274745-enable-buildkit
+    - name: nodeploymentenv
+    - name: featureenv
+      build:
+        from: feature/*
+    - name: nonconfigbranchenv
+      build:
+        from: nonconfigbranch
+  components:
+    - name: server
+      ingressConfiguration:
+        - stickysessions
+      variables:
+        public_port: 8080
+      ports:
+        - name: http
+          port: 8080
+      publicPort: http
+    # - name: redis-submodule
+    #   src: submodule-example
+    #   secrets:
+    #     - REDIS_PASSWORD
+    #   ports:
+    #     - name: redis
+    #       port: 6379
+    # - name: dnsmasq
+    #   src: dnsmasq
+    #   ports:
+    #    - name: dns
+    #      port: 53
+      
