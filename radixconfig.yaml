@@ -28,6 +28,7 @@ spec:
         - stickysessions
       variables:
         public_port: 8080
+        some_var: some_var
       ports:
         - name: http
           port: 8080
