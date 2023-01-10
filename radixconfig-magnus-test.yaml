@@ -26,7 +26,7 @@ spec:
         - stickysessions
       variables:
         public_port: 8080
-        some_var: radixconfig-magnus-test.yamllll
+        some_var: radixconfig-magnus-test.yamlllll
       ports:
         - name: http
           port: 8080
