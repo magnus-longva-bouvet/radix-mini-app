@@ -10,6 +10,8 @@ spec:
       egress:
         allowedDnsZones:
           - "vg.no"
+          - "*.equinor.com"
+          - ".stackexchange.com"
     - name: 274745-enable-buildkit
       build:
         from: 274745-enable-buildkit
