@@ -8,10 +8,6 @@ spec:
       build:
         from: main
       egress:
-        allowRadix: true
-        rules:
-          - destinations:
-            - "0.0.0.0/0"
         allowedDnsZones:
           - "vg.no"
     - name: 274745-enable-buildkit
